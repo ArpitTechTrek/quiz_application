@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, {super.key});
@@ -17,26 +18,44 @@ class StartScreen extends StatelessWidget {
             color: const Color.fromARGB(141, 255, 255, 255),
           ),
           const SizedBox(height: 50),
-          const Text(
+          Text(
             "Learn Flutter the fun way!",
-            style: TextStyle(
+            style: GoogleFonts.nunito(
               fontSize: 20,
-              color: Color.fromARGB(170, 255, 255, 255),
+              color: const Color.fromARGB(170, 255, 255, 255),
             ),
           ),
           const SizedBox(height: 50),
-          OutlinedButton.icon(
-            onPressed:startQuiz,
-            style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.white,
-              //backgroundColor: const Color.fromARGB(255, 33, 243, 156),
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+          Container(
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [
+                  Colors.green,
+                  Colors.blue
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(40),
+            ),
+            child: ElevatedButton.icon(
+              onPressed:startQuiz,
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20,),
+                backgroundColor: Colors.transparent,
+                shadowColor: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40),
+                ),
+              ),
+                icon: const Icon(Icons.arrow_forward_ios),
+                label: Text(
+                  "Start Quiz",
+                  style: GoogleFonts.nunito(
+                  color: Colors.white
+                )
               ),
             ),
-            icon: const Icon(Icons.arrow_forward_ios),
-            label: const Text("Start Quiz"),
           ),
         ],
       ),

@@ -13,50 +13,34 @@ class StartScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Image.asset(
-            "assets/images/quiz-logo.png",
+            'assets/images/quiz-logo.png',
             width: 300,
-            color: const Color.fromARGB(141, 255, 255, 255),
+            color: const Color.fromARGB(150, 255, 255, 255),
           ),
-          const SizedBox(height: 50),
+          // Opacity(
+          //   opacity: 0.6,
+          //   child: Image.asset(
+          //     'assets/images/quiz-logo.png',
+          //     width: 300,
+          //   ),
+          // ),
+          const SizedBox(height: 80),
           Text(
-            "Learn Flutter the fun way!",
-            style: GoogleFonts.nunito(
-              fontSize: 20,
-              color: const Color.fromARGB(170, 255, 255, 255),
+            'Learn Flutter the fun way!',
+            style: GoogleFonts.lato(
+              color: const Color.fromARGB(255, 237, 223, 252),
+              fontSize: 24,
             ),
           ),
-          const SizedBox(height: 50),
-          Container(
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [
-                  Colors.green,
-                  Colors.blue
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(40),
+          const SizedBox(height: 30),
+          OutlinedButton.icon(
+            onPressed: startQuiz,
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
             ),
-            child: ElevatedButton.icon(
-              onPressed:startQuiz,
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20,),
-                backgroundColor: Colors.transparent,
-                shadowColor: Colors.transparent,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40),
-                ),
-              ),
-                icon: const Icon(Icons.arrow_forward_ios),
-                label: Text(
-                  "Start Quiz",
-                  style: GoogleFonts.nunito(
-                  color: Colors.white
-                )
-              ),
-            ),
-          ),
+            icon: const Icon(Icons.arrow_right_alt),
+            label: const Text('Start Quiz'),
+          )
         ],
       ),
     );
